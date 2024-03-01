@@ -9,7 +9,7 @@ class Usuarios
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT Usuarios.idUsuarios, Usuarios.cedula,Usuarios.Nombres, Usuarios.Contrasenia, Usuarios.Apellidos, Usuarios.Correo, Usuarios.face_id, Roles.Rol, Roles.idRoles, Sucursales.Nombre from Usuarios INNER JOIN Usuarios_Roles on Usuarios.idUsuarios = Usuarios_Roles.Usuarios_idUsuarios INNER JOIN Roles ON Usuarios_Roles.Roles_idRoles = Roles.idRoles INNER JOIN Sucursales on Usuarios.SucursalId = Sucursales.SucursalId";
+        $cadena = "SELECT Usuarios.idUsuarios, Usuarios.cedula,Usuarios.Nombres, Usuarios.Contrasenia, Usuarios.Apellidos, Usuarios.Correo, Usuarios.face_id, Roles.Rol, Roles.idRoles from Usuarios INNER JOIN Usuarios_Roles on Usuarios.idUsuarios = Usuarios_Roles.Usuarios_idUsuarios INNER JOIN Roles ON Usuarios_Roles.Roles_idRoles = Roles.idRoles";
         $datos = mysqli_query($con, $cadena);
         return $datos;
         $con->close();
