@@ -39,12 +39,16 @@ function init() {
     e.preventDefault();
     var DatosFormularioUsuario = new FormData($("#form_usuarios")[0]);
     var accion = "../../controllers/usuario.controllers.php?op=insertar";
-
+  
     for (var pair of DatosFormularioUsuario.entries()) {
       console.log(pair[0] + ", " + pair[1]);
     }
-
-
+  
+    /**
+     * if(SucursalId >0){editar   accion='ruta para editar'}
+     * else
+     * { accion = ruta para insertar}
+     */
     $.ajax({
       url: accion,
       type: "post",
@@ -60,7 +64,7 @@ function init() {
           CargaLista();
           LimpiarCajas();
         } else {
-          alert("Error al guardar");
+          alert("no tu pendejada");
         }
       },
     });

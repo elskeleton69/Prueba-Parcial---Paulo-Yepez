@@ -6,7 +6,7 @@
         data-bs-target="#ModalUsuarios">Nuevo Usuario</button>
 
 
-    <h5 class="card-header">Lista de Proveedores</h5>
+    <h5 class="card-header">Lista de Usuarios</h5>
     <div class="table-responsive text-nowrap">
         <table class="table">
             <thead>
@@ -41,27 +41,27 @@
                 <div class="modal-body">
                     
                     <div class="form-group">
-                        <label for="Nombre">Nombre</label>
+                        <label for="Nombres">Nombre</label>
                         <input type="text" name="Nombres" id="Nombres" class="form-control"
                             placeholder="Ingrese sus nombres" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Apellidos</label>
+                        <label for="Apellidos">Apellidos</label>
                         <input type="text" name="Apellidos" id="Apellidos" class="form-control"
                             placeholder="Ingrese sus apellidos" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Rol</label>
+                        <label for="Rol">Rol</label>
                         <select id="idRoles" name="idRoles" class="form-control">
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Correo Electrónico</label>
+                        <label for="Correo">Correo Electrónico</label>
                         <input type="email" name="Correo" id="Correo" class="form-control"
                             placeholder="Ingrese su Correo" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Contraseña</label>
+                        <label for="contrasenia">Contraseña</label>
                         <input type="password" name="contrasenia" id="contrasenia" class="form-control"
                             placeholder="**********" require>
                     </div>

@@ -70,13 +70,13 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="usuarios/usuarios.views.php" target="base" class="menu-link">
+                    <a href="proveedor/proveedor.views.php" target="base" class="menu-link">
                         <?php $_SESSION['rutas'] = 'Proveedores'; ?>>
                         <div data-i18n="Container">Proveedores</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="usuarios/usuarios.views.php" target="base" class="menu-link">
+                    <a href="pedido/pedido.views.php" target="base" class="menu-link">
                         <?php $_SESSION['rutas'] = 'Pedidos'; ?>>
                         <div data-i18n="Fluid">Pedidos</div>
                     </a>
