@@ -17,14 +17,7 @@ switch ($_GET["op"]) {
         echo json_encode($todos);
         break;
     /*TODO: Procedimiento para sacar un registro */
-    case 'video':
-        $datos = array();
-        $datos = $Usuarios->video();
-        while ($row = mysqli_fetch_assoc($datos)) {
-            $todos[] = $row;
-        }
-        echo json_encode($todos);
-        break;
+  
     case 'uno':
 
         $idUsuarios = $_POST["idUsuarios"];
@@ -33,25 +26,15 @@ switch ($_GET["op"]) {
         $res = mysqli_fetch_assoc($datos);
         echo json_encode($res);
         break;
-    case "unoconCedula":
-        $Cedula = $_POST["cedula"];
-        $datos = array();
-        $datos = $Usuarios->unoconCedula($Cedula);
-        $res = mysqli_fetch_assoc($datos);
-        echo json_encode($res);
-        break;
     /*TODO: Procedimiento para insertar */
     case 'insertar':
         $Nombres = $_POST["Nombres"];
-        $Cedula = $_POST["Cedula"];
         $Apellidos = $_POST["Apellidos"];
         $Correo = $_POST["Correo"];
         $Contrasenia = $_POST["contrasenia"];
-        $face_id = $_POST["face_id"];
-        $SucursalId = $_POST["SucursalId"];
-        $RolId = $_POST["RolId"];
+        $RolId = $_POST["idRoles"];
         $datos = array();
-        $datos = $Usuarios->Insertar($Nombres, $Cedula, $Apellidos, $Correo, $Contrasenia, $face_id, $SucursalId, $RolId);
+        $datos = $Usuarios->Insertar($Nombres, $Apellidos, $Correo, $Contrasenia, $RolId);
         echo json_encode($datos);
         break;
     /*TODO: Procedimiento para actualizar */
@@ -111,7 +94,7 @@ switch ($_GET["op"]) {
 
 
 
-                    header("Location:../views/sidebar.php");
+                    header("Location:../views/home.php");
                     exit();
                 } else {
                     header("Location:../login.php?op=156");
