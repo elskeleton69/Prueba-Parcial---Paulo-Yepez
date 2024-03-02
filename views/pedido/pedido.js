@@ -43,15 +43,26 @@ var GuardarEditar = (e) => {
     }
 
     $.ajax({
-        url: "../../controllers/pedido.controllers.php?op=insertar",
+        url: accion,
         type: "post",
-        data: { blogId: blogId, usuariosId: usuariosId },
-        success: async (respuesta) => {
-          console.log(respuesta)
-          resolve(respuesta);
+        data: DatosFormularioPedido,
+        processData: false,
+        contentType: false,
+        cache: false,
+        success: (respuesta) => {
+            console.log(respuesta);
+            respuesta = JSON.parse(respuesta);
+            if (respuesta == "ok") {
+                alert("Se guardó con éxito");
+                CargaLista();
+                LimpiarCajas();
+            } else {
+                alert("Error al guardar");
+            }
         },
-        error: (error) => {
-          reject(error);
+        error: (xhr, status, error) => {
+            console.error(xhr.responseText);
+            alert("Error al procesar la solicitud");
         }
     });
 };
