@@ -2,7 +2,7 @@
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <button type="button" class="btn btn-outline-secondary" onclick="roles();" data-bs-toggle="modal"
+    <button type="button" class="btn btn-outline-secondary"  data-bs-toggle="modal"
         data-bs-target="#ModalProveedor">Nuevo Proveedores</button>
 
 
@@ -52,8 +52,8 @@
                     </div>
                     <div class="form-group">
                         <label for="Contacto">Contacto</label>
-                        <select id="Contacto" name="Contacto" class="form-control">
-                        </select>
+                        <input type="text" name="Contacto" id="Contacto" class="form-control"
+                            placeholder="Ingrese el contacto del proveedor" require>
                     </div>
                     <div class="form-group">
                         <label for="Telefono">Teléfono</label>

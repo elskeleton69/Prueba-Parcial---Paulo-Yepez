@@ -2,7 +2,7 @@
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <button type="button" class="btn btn-outline-secondary" onclick="roles();" data-bs-toggle="modal"
+    <button type="button" class="btn btn-outline-secondary" onclick="proveedor();" data-bs-toggle="modal"
         data-bs-target="#ModalPedidos">Nuevo Pedido</button>
 
 
@@ -57,7 +57,12 @@
                     </div>
                     <div class="form-group">
                         <label for="Metodo de Pago">Metodo de Pago</label>
-                        <select id="idRoles" name="idRoles" class="form-control">
+                        <input type="text" name="Metodo_pago" id="Metodo_pago" class="form-control"
+                            placeholder="Ingrese el metodo  de pago" require>
+                    </div>
+                    <div class="form-group">
+                        <label for="Proveedor">Proveedor</label>
+                        <select id="ID_proveedor" name="ID_proveedor" class="form-control">
                         </select>
                     </div>
 
@@ -79,5 +84,5 @@
 
 <?php require_once('../html/scripts2.php') ?>
 
-<script src="./pedidos.js"></script>
+<script src="./pedido.js"></script>
 

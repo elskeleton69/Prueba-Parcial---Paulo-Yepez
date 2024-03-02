@@ -9,7 +9,7 @@ switch ($_GET["op"]) {
     /* Procedimiento para listar todos los registros */
     case 'todos':
         $datos = array();
-        $datos = $pedido->todos();
+        $datos = $Pedidos->todos();
         while ($row = mysqli_fetch_assoc($datos)) {
             $todos[] = $row;
         }
@@ -20,7 +20,7 @@ switch ($_GET["op"]) {
     case 'uno':
         $ID_pedido = $_POST["ID_pedido"];
         $datos = array();
-        $datos = $pedido->uno($ID_pedido);
+        $datos = $Pedidos->uno($ID_pedido);
         $res = mysqli_fetch_assoc($datos);
         echo json_encode($res);
         break;
@@ -32,7 +32,7 @@ switch ($_GET["op"]) {
         $Estado = $_POST["Estado"];
         $Metodo_pago = $_POST["Metodo_pago"];
         $datos = array();
-        $datos = $pedido->Insertar($Fecha, $Total, $Estado, $Metodo_pago);
+        $datos = $Pedidos->Insertar($Fecha, $Total, $Estado, $Metodo_pago);
         echo json_encode($datos);
         break;
     
@@ -44,7 +44,7 @@ switch ($_GET["op"]) {
         $Estado = $_POST["Estado"];
         $Metodo_pago = $_POST["Metodo_pago"];
         $datos = array();
-        $datos = $pedido->Actualizar($ID_pedido, $Fecha, $Total, $Estado, $Metodo_pago);
+        $datos = $Pedidos->Actualizar($ID_pedido, $Fecha, $Total, $Estado, $Metodo_pago);
         echo json_encode($datos);
         break;
 
@@ -52,7 +52,7 @@ switch ($_GET["op"]) {
     case 'eliminar':
         $ID_pedido = $_POST["ID_pedido"];
         $datos = array();
-        $datos = $pedido->Eliminar($ID_pedido);
+        $datos = $Pedidos->Eliminar($ID_pedido);
         echo json_encode($datos);
         break;
 }

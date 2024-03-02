@@ -9,7 +9,7 @@ class Proveedores
         $con = $con->ProcedimientoConectar();
         $cadena = "SELECT 
         P.ID_proveedor,
-        P.Nombre AS NombreProveedor,
+        P.Nombre,
         P.Producto_suministrado,
         P.Contacto,
         P.Telefono,
@@ -41,7 +41,7 @@ class Proveedores
     }
 
 
-    public function insertar($Nombre, $Producto_suministrado, $Contacto, $Telefono, $idpedido)
+    public function insertar($Nombre, $Producto_suministrado, $Contacto, $Telefono, $ID_pedido)
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
@@ -51,7 +51,7 @@ class Proveedores
             require_once('../models/suministra.php');
             $suministra = new Suministra();
 
-            return $suministra->Insertar(mysqli_insert_id($con), $idpedido);
+            return $suministra->Insertar(mysqli_insert_id($con), $ID_pedido);
         } else {
             return 'Error al insertar en la base de datos';
         }

@@ -22,19 +22,24 @@ public function uno($ID_pedido)
     return $datos;
 }
 
-public function Insertar($Fecha, $Total, $Estado, $Metodo_pago)
+public function Insertar($Fecha, $Total, $Estado, $Metodo_pago, $ID_proveedor)
 {
     $con = new ClaseConectar();
     $con = $con->ProcedimientoConectar();
     $cadena = "INSERT INTO Pedido (Fecha, Total, Estado, Metodo_pago) VALUES ('$Fecha', $Total, '$Estado', '$Metodo_pago')";
+    
     if (mysqli_query($con, $cadena)) {
-        $con->close();
-        return "ok";
+        require_once("/suministra.models.php");    
+        $ProPedido = new Suministra();
+        return $ProPedido->Insertar(mysqli_insert_id($con), $ID_proveedor);
+        
+        
     } else {
-        $con->close();
         return 'Error al insertar en la base de datos';
     }
+    $con->close();
 }
+
 
 public function Actualizar($ID_pedido, $Fecha, $Total, $Estado, $Metodo_pago)
 {
